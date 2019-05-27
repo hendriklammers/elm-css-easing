@@ -1,7 +1,7 @@
 module Hover exposing (main)
 
 import Css exposing (..)
-import Css.Easing exposing (easeOutExpo, easeOutSine)
+import Css.Easing exposing (easeOutSine)
 import Css.Transitions as T
 import Html.Styled exposing (div, text, toUnstyled)
 import Html.Styled.Attributes exposing (css)
