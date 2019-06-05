@@ -30,7 +30,7 @@ import Css.Easing
         )
 import Css.Transitions as T
 import Html
-import Html.Styled exposing (Html, div, text, toUnstyled)
+import Html.Styled exposing (Html, div, span, text, toUnstyled)
 import Html.Styled.Attributes exposing (css)
 
 
@@ -74,7 +74,10 @@ viewEase { name, transition } =
     div
         [ css
             [ position relative
-            , backgroundColor <| hex "F0D11F"
+            , displayFlex
+            , justifyContent center
+            , alignItems center
+            , backgroundColor <| hex "261D5E"
             , width <| px 200
             , height <| px 100
             , before
@@ -83,10 +86,11 @@ viewEase { name, transition } =
                 , property "content" "''"
                 , width <| pct 100
                 , height <| pct 100
-                , backgroundColor <| hex "01A6D6"
+                , backgroundColor <| hex "FC0350"
                 , transform <| scaleX 0
                 , property "transform-origin" "0 0"
                 , T.transition [ transition ]
+                , zIndex <| int 1
                 ]
             , hover
                 [ before
@@ -94,7 +98,22 @@ viewEase { name, transition } =
                 ]
             ]
         ]
-        [ text "" ]
+        [ span
+            [ css
+                [ zIndex <| int 2
+                , color <| hex "FFF"
+                , fontFamilies
+                    [ "Helvetica Neue"
+                    , "Helvetica"
+                    , "Arial"
+                    , "sans-serif"
+                    ]
+                , fontWeight <| int 300
+                , fontSize <| px 18
+                ]
+            ]
+            [ text name ]
+        ]
 
 
 main : Html.Html msg
