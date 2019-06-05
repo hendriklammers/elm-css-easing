@@ -1,4 +1,4 @@
-module Hover exposing (main)
+module Overview exposing (main)
 
 import Css exposing (..)
 import Css.Easing
