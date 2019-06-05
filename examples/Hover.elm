@@ -77,9 +77,10 @@ viewEase { name, transition } =
             , displayFlex
             , justifyContent center
             , alignItems center
+            , marginBottom <| px 20
             , backgroundColor <| hex "261D5E"
             , width <| px 200
-            , height <| px 100
+            , height <| px 60
             , before
                 [ position absolute
                 , display block
@@ -119,5 +120,13 @@ viewEase { name, transition } =
 main : Html.Html msg
 main =
     toUnstyled <|
-        div []
+        div
+            [ css
+                [ displayFlex
+                , flexWrap wrap
+                , maxWidth <| px 660
+                , margin2 (px 0) auto
+                , justifyContent spaceAround
+                ]
+            ]
             (List.map viewEase (easings 500))
