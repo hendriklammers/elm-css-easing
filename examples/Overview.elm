@@ -129,4 +129,4 @@ main =
                 , justifyContent spaceAround
                 ]
             ]
-            (List.map viewEase (easings 500))
+            (List.map viewEase (easings 700))
